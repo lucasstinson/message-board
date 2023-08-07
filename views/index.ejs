@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to the <%= title %></p>
+    <a href="/new"> Add a message to the board!</a>
+    <div class="container">
+      <ul>
+        <% messages.forEach(message => { %>
+        <li>
+          <%= `${message.user}: ${message.text}
+          (${message.added.toLocaleString()})`%>
+        </li>
+        <% }); %>
+      </ul>
+    </div>
+  </body>
+</html>
